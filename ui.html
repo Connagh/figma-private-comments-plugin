@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Square</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #5a9bf6;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4283d8;
+    }
+  </style>
+</head>
+<body>
+  <button id="create-square">Create Blue Square</button>
+
+  <script>
+    document.getElementById('create-square').onclick = () => {
+      parent.postMessage({ pluginMessage: { type: 'create-square' } }, '*');
+    };
+  </script>
+</body>
+</html>
